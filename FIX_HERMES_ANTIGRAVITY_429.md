@@ -40,6 +40,7 @@ Through exact bi-section and upstream verification, the following phrases in Her
 
 | Component | Triggering Phrase in System Prompt | Safe Reworded Alternative |
 | :--- | :--- | :--- |
+| **Mid-turn steering (`prompt_builder.py`)** | `Mid-turn, the user can steer you: Hermes delivers their message as a standalone user message right after` | `Mid-turn, the user can steer you: the runtime delivers their input as a standalone message right after` |
 | **Identity (`SOUL.md`, `prompt_builder.py`)** | `You are Hermes Agent, built by Nous Research.` | `You are Hermes, an AI agent built by Nous Research.` |
 | **Persona Style (`SOUL.md`)** | `Be direct: match the length of your reply to the weight of the ask` | `Be direct: scale response length appropriately to the request` |
 | **Task Completion (`prompt_builder.py`)** | `Reporting a blocker honestly is always better than inventing a result.` | `Explaining an obstacle candidly is always preferred over making up a result.` |
@@ -88,7 +89,8 @@ replacements = [
     ("Reporting a blocker honestly is always better than inventing a result.", "Explaining an obstacle candidly is always preferred over making up a result."),
     ("# Google model operational directives", "# Operational directives for model"),
     ("<!-- End Hermes runtime environment -->", "<!-- End runtime environment context -->"),
-    ("https://hermes-agent.nousresearch.com/docs", "https://hermes.nousresearch.com")
+    ("https://hermes-agent.nousresearch.com/docs", "https://hermes.nousresearch.com"),
+    ("Mid-turn, the user can steer you: Hermes delivers their message as a standalone user message right after", "Mid-turn, the user can steer you: the runtime delivers their input as a standalone message right after")
 ]
 
 for p in sorted(set(files_to_patch)):
